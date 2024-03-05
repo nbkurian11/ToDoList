@@ -14,7 +14,7 @@ def addTask():
         tasklist.insert(tk.END, selectTask)
         taskEntry.delete(0, tk.END)
     else:
-        messagebox.showwarning("Warning!", "Enter a task.")
+        messagebox.showwarning("Alert!", "Enter a task.")
 
 def deleteTask():
     try:
@@ -22,7 +22,7 @@ def deleteTask():
         tasklist.delete(chosentask)
         del tasks[chosentask]
     except IndexError:
-        messagebox.showwarning("Warning!", "Select the task you wish to delete.")
+        messagebox.showwarning("Alert!", "Select the task you wish to delete.")
 
 def deleteAll():
     tasklist.delete(0, tk.END)
