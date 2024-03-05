@@ -24,6 +24,10 @@ def deleteTask():
     except IndexError:
         messagebox.showwarning("Warning!", "Select the task you wish to delete.")
 
+def deleteAll():
+    tasklist.delete(0, tk.END)
+    tasks.clear()
+
 taskEntry = tk.Entry(screen, width=40)
 taskEntry.grid()    
 
@@ -32,6 +36,9 @@ add.grid()
 
 delete = tk.Button(screen, text="Delete", command= deleteTask, bg= "red")
 delete.grid()
+
+deleteAll = tk.Button(screen, text = "Clear", command = deleteAll, bg = "grey")
+deleteAll.grid()
 
 tasklist = tk.Listbox(screen, width=50)
 tasklist.grid()
